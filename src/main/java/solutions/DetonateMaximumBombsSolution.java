@@ -17,8 +17,8 @@ public class DetonateMaximumBombsSolution {
         // 1. Transform the bombs into a directed graph.
         //    Note: there is an edge from bomb A to bomb B if A can detonate B
         // 2. For each vertex in the graph, find all vertices reachable from it using BFS.
-        //    Note: We need to discover the biggest connected component that contains each vertex.
-        // 3. Find the maximum size among all connected components in the graph.
+        //    Note: We need to discover longest BFS traversal that contains each vertex.
+        // 3. Find the maximum size among all traversals we discovered in the previous step.
         var graph = buildAdjacenciesList(bombs);
         return findSizeOfBiggestConnectedComponent(graph);
     }
