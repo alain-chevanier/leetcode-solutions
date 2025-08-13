@@ -23,26 +23,7 @@ public class DetonateMaximumBombsSolution {
         return findSizeOfBiggestConnectedComponent(graph);
     }
 
-    private int findSizeOfBiggestConnectedComponent(
-       Map<Integer, Set<Integer>> graph) {
-        int max = 0;
-        var visitedVertices = new HashSet<Integer>();
-        for (int vertex : graph.keySet()) {
-            if (visitedVertices.size() == graph.size()) {
-                break;
-            }
-            if (visitedVertices.contains(vertex)) {
-                continue;
-            }
-            var connectedComponent = bfs(vertex, graph);
-            max = Math.max(max, connectedComponent.size());
-            visitedVertices.addAll(connectedComponent);
-        }
-        return max;
-    }
-
-    Map<Integer, Set<Integer>>
-    buildAdjacenciesList(int[][] bombs) {
+    Map<Integer, Set<Integer>> buildAdjacenciesList(int[][] bombs) {
         var adjacencyLists = new HashMap<Integer, Set<Integer>>();
         for (int cur = 0; cur < bombs.length; cur++) {
             adjacencyLists.put(cur, new HashSet<Integer>());
@@ -61,6 +42,27 @@ public class DetonateMaximumBombsSolution {
         long yDiff = Math.abs(bombA[1] - bombB[1]);
         long R = bombA[2];
         return (xDiff * xDiff + yDiff * yDiff) <= R * R;
+    }
+
+    private int findSizeOfBiggestConnectedComponent(
+       Map<Integer, Set<Integer>> graph) {
+        int max = 0;
+        var visitedVertices = new HashSet<Integer>();
+        for (int vertex : graph.keySet()) {
+            // already discovered all connected components?
+            if (visitedVertices.size() == graph.size()) {
+                break;
+            }
+            // the current vertex belongs to a connected
+            // component we already analyzed?
+            if (visitedVertices.contains(vertex)) {
+                continue;
+            }
+            var connectedComponent = bfs(vertex, graph);
+            max = Math.max(max, connectedComponent.size());
+            visitedVertices.addAll(connectedComponent);
+        }
+        return max;
     }
 
     Set<Integer> bfs(int vertex, Map<Integer, Set<Integer>> graph) {
