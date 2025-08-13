@@ -1,24 +1,23 @@
-* Platform Problems Solutions
+#+title: Platform Problems Solutions
+#+author: Alaín Chevanier <[[mailto:alain.chevanier@ciencias.unam.mx][alain.chevanier@ciencias.unam.mx]]>
+
 :PROPERTIES:
 :CUSTOM_ID: platform-problems-solutions
 :END:
-Alaín Chevanier
-[[mailto:alain.chevanier@ciencias.unam.mx][alain.chevanier@ciencias.unam.mx]]
-
-** Objetivo
+* Objetivo
 :PROPERTIES:
 :CUSTOM_ID: objetivo
 :END:
 To be defined
 
-** Indicaciones generales
+* Indicaciones generales
 :PROPERTIES:
 :CUSTOM_ID: indicaciones-generales
 :END:
 Los ejercicios describen un problema a resolver mediante un programa que
 debe de implementarse en java.
 
-** Desarrollo
+* Desarrollo
 :PROPERTIES:
 :CUSTOM_ID: desarrollo
 :END:
@@ -54,7 +53,7 @@ $ ./mvnw package -DskipTests
 $ ./mvnw exec:java 
 #+end_example
 
-** Configuración de los git hooks para formatear el código
+* Configuración de los git hooks para formatear el código
 :PROPERTIES:
 :CUSTOM_ID: configuración-de-los-git-hooks-para-formatear-el-código
 :END:
@@ -65,44 +64,14 @@ configurar un módulo de git que te ayudará a formatear tu código.
 ./mvnw git-code-format:install-hooks
 #+end_example
 
-** Forma de trabajo
-:PROPERTIES:
-:CUSTOM_ID: forma-de-trabajo
-:END:
-Recomendamos ampliamente utilizar el editor
-[[https://www.jetbrains.com/help/idea/installation-guide.html][IntelliJ]]
-para realizar el desarrollo de la práctica. También agrega el plugin de
-IntelliJ
-[[https://www.sonarsource.com/products/sonarlint/features/jetbrains/][SonarLint]].
 
-** Entrega
-:PROPERTIES:
-:CUSTOM_ID: entrega
-:END:
-Deja todo el código con tu solución en la rama *main*, pues por omisión
-es esta rama la que compara *Github Classroom* contra la versión inicial
-del código mediante el *Pull Request* llamado *Feedback*, el cual
-nosotros vamos a revisar para evaluar tu entrega.
 
-Para verificar que tu código cumple con la especificación, en tu *Pull
-Request* debes de pasar las dos validaciones que hace *Github Actions*
-sobre el código, una de ellas verifica que pasas las pruebas
-automatizadas, y la otra que hayas formateado tu código con el plugin de
-maven.
-
-Además, no olvides marcar en classroom la tarea como entregada y en ella
-incluir el enlace hacia el *Pull Request* que contiene tu solución.
-
-La fecha de entrega de tu práctica va a ser el máximo entre la fecha en
-la que abriste el *Pull Request* y la fecha en la que hiciste el último
-push al repositorio con tu solución.
-
-** Problemas
+* Problemas
 :PROPERTIES:
 :CUSTOM_ID: problemas
 :END:
-*** Leetcode
+** Leetcode
 :PROPERTIES:
 :CUSTOM_ID: leetcode
 :END:
-- [[][2101. Detonate the Maximum Bombs]]
+- [[file:src/main/java/solutions/BombsProblem.java][2101. Detonate the Maximum Bombs]]

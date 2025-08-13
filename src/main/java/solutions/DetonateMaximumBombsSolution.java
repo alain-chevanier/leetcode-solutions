@@ -44,7 +44,7 @@ public class DetonateMaximumBombsSolution {
     Map<Integer, Set<Integer>>
     buildAdjacenciesList(int[][] bombs) {
         var adjacencyLists = new HashMap<Integer, Set<Integer>>();
-        for (var cur = 0; cur < bombs.length; cur++) {
+        for (int cur = 0; cur < bombs.length; cur++) {
             adjacencyLists.put(cur, new HashSet<Integer>());
             for (int other = 0; other < bombs.length; other++) {
                 if (cur != other
