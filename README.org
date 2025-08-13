@@ -74,4 +74,4 @@ configurar un módulo de git que te ayudará a formatear tu código.
 :PROPERTIES:
 :CUSTOM_ID: leetcode
 :END:
-- [[file:src/main/java/solutions/BombsProblem.java][2101. Detonate the Maximum Bombs]]
+- [[file:src/main/java/solutions/DetonateMaximumBombsSolution.java][2101. Detonate the Maximum Bombs]]
