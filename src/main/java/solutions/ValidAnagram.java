@@ -4,7 +4,7 @@ package solutions;
  * 242. Valid Anagram
  * https://leetcode.com/problems/valid-anagram/description/
  */
-public class ValidAnagramSolution {
+public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;

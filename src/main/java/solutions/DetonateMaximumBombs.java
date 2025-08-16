@@ -10,7 +10,7 @@ import java.util.Map;
  * 2101. Detonate the Maximum Bombs
  * https://leetcode.com/problems/detonate-the-maximum-bombs/description/
  */
-public class DetonateMaximumBombsSolution {
+public class DetonateMaximumBombs {
     public int maximumDetonation(int[][] bombs) {
         // Solution:
         // 1. Transform the bombs into a directed graph.
@@ -85,7 +85,7 @@ public class DetonateMaximumBombsSolution {
     }
 }
 
-class DetonateMaximumBombsSolution2 {
+class DetonateMaximumBombs2 {
     public int maximumDetonation(int[][] bombs) {
         var dist = buildGraph(bombs);
         floydWharshall(dist);
