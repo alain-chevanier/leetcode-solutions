@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * LeetCode problem:
  * 2101. Detonate the Maximum Bombs
  * https://leetcode.com/problems/detonate-the-maximum-bombs/description/
  */
@@ -83,5 +82,65 @@ public class DetonateMaximumBombsSolution {
         }
 
         return visitedVertices;
+    }
+}
+
+class DetonateMaximumBombsSolution2 {
+    public int maximumDetonation(int[][] bombs) {
+        var dist = buildGraph(bombs);
+        floydWharshall(dist);
+        return findMaxBiggestDAG(dist);
+    }
+
+    Integer[][] buildGraph(int[][] bombs) {
+        var dist = new Integer[bombs.length][bombs.length];
+        for (int cur = 0; cur < bombs.length; cur++) {
+            for (int other = 0; other < bombs.length; other++) {
+                if (cur == other) {
+                    dist[cur][other] = 0;
+                } else {
+                    dist[cur][other] = isReachable(bombs, cur, other) ? 1 : null;
+                }
+
+            }
+        }
+        return dist;
+    }
+
+    boolean isReachable(int[][] bombs, int source, int target) {
+        long xDist = Math.abs(bombs[source][0] - bombs[target][0]);
+        long yDist = Math.abs(bombs[source][1] - bombs[target][1]);
+        long blastRadius = bombs[source][2];
+        return xDist*xDist + yDist*yDist <= blastRadius * blastRadius;
+    }
+
+    void floydWharshall(Integer[][] dist) {
+        int vertices = dist.length;
+        for (int k = 0; k < vertices; k++) {
+            for (int source = 0; source < vertices; source++) {
+                for (int destination = 0; destination < vertices; destination++) {
+                    if (dist[source][k] != null
+                        && dist[k][destination] != null
+                        && (dist[source][destination] == null ||
+                            (dist[source][destination] >
+                             dist[source][k] + dist[k][destination]))) {
+                        dist[source][destination] =
+                             dist[source][k] + dist[k][destination];
+                    }
+                }
+            }
+        }
+    }
+
+    int findMaxBiggestDAG(Integer[][] dist) {
+        int max = 0;
+        for (int vertex = 0; vertex < dist.length; vertex++) {
+            int reachableVertices = 0;
+            for (Integer distance : dist[vertex]) {
+                reachableVertices += distance != null ? 1 : 0;
+            }
+            max = Math.max(max, reachableVertices);
+        }
+        return max;
     }
 }
