@@ -8,6 +8,7 @@ I'm solving problems of the [[https://neetcode.io/roadmap][NeetCode Roadmap]] us
 - [[file:src/main/java/solutions/TwoSum.java][1. Two Sum]]
 - [[file:src/main/java/solutions/GroupAnagrams.java][49. Group Anagrams]]
 - [[file:src/main/java/solutions/ContainsDuplicate.java][217. Contains Duplicate]]
+- [[file:src/main/java/solutions/NumberOfIslands.java][200. Number of Islands]]
 - [[file:src/main/java/solutions/ValidAnagram.java][242. Valid Anagram]]
 - [[file:src/main/java/solutions/DetonateMaximumBombs.java][2101. Detonate the Maximum Bombs]]
 
