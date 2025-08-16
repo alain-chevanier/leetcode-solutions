@@ -1,48 +1,36 @@
 #+title: Platform Problems Solutions
 #+author: Alaín Chevanier <[[mailto:alain.chevanier@ciencias.unam.mx][alain.chevanier@ciencias.unam.mx]]>
 
-:PROPERTIES:
-:CUSTOM_ID: platform-problems-solutions
-:END:
-* Objetivo
-:PROPERTIES:
-:CUSTOM_ID: objetivo
-:END:
-To be defined
+* Goal
+I'm solving problems of the [[https://neetcode.io/roadmap][NeetCode Roadmap]] using java, plus some additional problems I found interesting.
 
-* Indicaciones generales
-:PROPERTIES:
-:CUSTOM_ID: indicaciones-generales
-:END:
-Los ejercicios describen un problema a resolver mediante un programa que
-debe de implementarse en java.
+* Problems
+- [[file:src/main/java/solutions/TwoSum.java][1. Two Sum]]
+- [[file:src/main/java/solutions/GroupAnagrams.java][49. Group Anagrams]]
+- [[file:src/main/java/solutions/ContainsDuplicate.java][217. Contains Duplicate]]
+- [[file:src/main/java/solutions/ValidAnagram.java][242. Valid Anagram]]
+- [[file:src/main/java/solutions/DetonateMaximumBombs.java][2101. Detonate the Maximum Bombs]]
 
-* Desarrollo
+* Tools and Technologies
 :PROPERTIES:
 :CUSTOM_ID: desarrollo
 :END:
-En esta práctica trabajarás con una base de código construida con Java
-17+ y Maven Wrapper, también proveemos pruebas unitarias escritas con la
-biblioteca *Junit 5.7.2* que te darán retrospectiva inmediatamente sobre
-el funcionamiento de tu implementación.
+In this repo you will work with a codebase built with Java 17+ and Maven Wrapper, we also provide unit tests written with the *Junit 5.7.2* library that will give you immediate feedback on the functionality of your implementation.
 
-Para ejecutar las pruebas necesitas ejecutar el siguiente comando:
+To run the tests you need to execute the following command:
 
 #+begin_example
 $ env ENV=github ./mvnw test
 #+end_example
 
-Para ejecutar las pruebas contenidas en una única clase de pruebas,
-utiliza un comando como el siguiente:
+
+To run the tests contained in a single test class, use a command like the following:
 
 #+begin_example
 $ ./mvnw -Dtest=MyClassTest test
 #+end_example
 
-En el código que recibirás la clase *App* tiene un método *main* que
-puedes ejecutar como cualquier programa escrito en *Java*. Para eso
-primero tienes que empaquetar la aplicación y finalmente ejecutar el jar
-generado. Utiliza un comando como el que sigue:
+The code you will receive has the *App* class with a *main* method that you can run like any program written in *Java*. To do this, you first need to package the application and finally run the generated jar. Use a command like the following:
 
 #+begin_example
 $ ./mvnw package
@@ -53,25 +41,10 @@ $ ./mvnw package -DskipTests
 $ ./mvnw exec:java 
 #+end_example
 
-* Configuración de los git hooks para formatear el código
-:PROPERTIES:
-:CUSTOM_ID: configuración-de-los-git-hooks-para-formatear-el-código
-:END:
-Antes de empezar a realizar commits que contenga tu solución tienes que
-configurar un módulo de git que te ayudará a formatear tu código.
+* How to configure git hooks to format code
+Before you start making commits that contain your solution, you need to configure a git module that will help you format your code.
 
 #+begin_example
 ./mvnw git-code-format:install-hooks
 #+end_example
 
-
-
-* Problemas
-:PROPERTIES:
-:CUSTOM_ID: problemas
-:END:
-** Leetcode
-:PROPERTIES:
-:CUSTOM_ID: leetcode
-:END:
-- [[file:src/main/java/solutions/DetonateMaximumBombsSolution.java][2101. Detonate the Maximum Bombs]]
